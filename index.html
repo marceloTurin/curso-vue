@@ -7,7 +7,27 @@
 </head>
 <body>
 
-	<div id="app" v-html="frase">
+	<!-- Condionais -->
+	<div id="placar">
+		<div>{{n}}</div>
+		<span v-if="n > 5">Passou de 5 pontos</span> <!--Se for true aparece se for false desaparece -->
+	</div> <br>
+
+	<!-- Loop -->
+	<div id="lista">
+		<ul>
+			<li v-for="info in nomes"> <!-- Loop no vue pegando o elemento nomes  -->
+				{{`${info.nome} ${info.sobrenome} ${info.idade} `}} anos
+			</li>
+		</ul> <br>
+
+		<ul>
+			<li v-for="info in nomes">
+				<span>Sr.</span>
+				<span v-text="info.nome"></span>
+				<span>{{info.sobrenome}}</span>
+			</li>
+		</ul>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
