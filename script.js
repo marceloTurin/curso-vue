@@ -1,5 +1,5 @@
 //Instanciando objeto do vue
-let placar = new Vue({
+/*let placar = new Vue({
 	el: '#placar', //Defenindo id do elemento	
 	data:{ 
 		n: 0
@@ -19,3 +19,24 @@ let lista = new Vue({
 		]
 	}
 })
+
+
+let app = new Vue ({
+	el: '#app',
+	data:{
+		texto: 'Texto Qualquer',
+		n1: 10,
+		n2: 15,
+		n3: 0
+	}
+})*/
+
+let soma = new Vue({
+	el: '#soma',
+	data:{
+		n1: Math.floor(Math.random()*30),
+		n2: Math.floor(Math.random()*30),
+		resultado: 0
+	}
+})
+
