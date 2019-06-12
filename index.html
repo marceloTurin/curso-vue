@@ -8,8 +8,25 @@
 <body>
 
 	<div id="app">
-		{{mostrar(nome,idade)}}
-		{{testar()}}
+
+	<div>
+		<p v-html="(
+			pais == 'argentina' ? argentina :
+			pais == 'brazil' ? brazil :
+			pais == 'china' ? china :
+			pais == 'uk' ? uk :
+			pais == 'usa' ? usa : ''
+		)"></p>
+		<p v-html="(
+			pais == 'argentina' ? 'América do Sul' :
+			pais == 'brazil' ? 'América do Sul' :
+			pais == 'china' ? 'Ásia' :
+			pais == 'uk' ? 'Europa' :
+			pais == 'usa' ? 'América do Norte'  : ''
+		)"></p>
+	</div>	
+
+
 	</div>	
 
 	<script type="text/javascript" src="script.js"></script>
