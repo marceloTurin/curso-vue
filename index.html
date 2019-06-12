@@ -9,23 +9,11 @@
 
 	<div id="app">
 
-	<div>
-		<p v-html="(
-			pais == 'argentina' ? argentina :
-			pais == 'brazil' ? brazil :
-			pais == 'china' ? china :
-			pais == 'uk' ? uk :
-			pais == 'usa' ? usa : ''
-		)"></p>
-		<p v-html="(
-			pais == 'argentina' ? 'América do Sul' :
-			pais == 'brazil' ? 'América do Sul' :
-			pais == 'china' ? 'Ásia' :
-			pais == 'uk' ? 'Europa' :
-			pais == 'usa' ? 'América do Norte'  : ''
-		)"></p>
-	</div>	
 
+		<div v-for="pais in paises()">
+			<p v-html="pais.bandeira"> </p>
+			<p v-html="pais.continente"> </p>
+		</div>
 
 	</div>	
 
