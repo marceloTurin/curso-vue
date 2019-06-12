@@ -21,6 +21,11 @@ bandeira = (pais)=>{
 	return `<img src="paises/${pais}.png" />`
 }
 
+Vue.component("pais",{
+	props: ['bandeira','continente'],
+	template: `<p v-html="nome + continente"> </p>`
+})
+
 let app = new Vue({
 	el:'#app',
 	data:{
