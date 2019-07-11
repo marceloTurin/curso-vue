@@ -55,22 +55,26 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		nome: 'Marcelo',
-		numero : 5
-	},
-	computed:{
-		aleatorio: function() {
-			let al = Math.floor(Math.random()*100);
-			return  `${this.numero} + ${al} = ${this.numero + al}`;
-		}
+		conta : '',
+		aviso: '',
+		resultado: '',
+		timer:null
 	},
 	methods:{
-		nomeInvertido: function(){
-			return this.nome.split('').reverse().join('');
-		},
-		aleatorioFuncao: function() {
-			let al = Math.floor(Math.random()*100);
-			return  `${this.numero} + ${al} = ${this.numero + al}`;
+		fazerConta:function (){
+			this.aviso = '';
+			this.resultado = eval(this.conta)
+		}
+	},
+	watch:{ /// Quando a propriedade conta for alterada ele limpa o contador
+		conta:function(){
+			this.aviso = 'Digitando...';
+			if (this.timer != null) {
+				clearTimeout(this.timer);
+			}
+
+			this.timer = setTimeout(this.fazerConta,1000) //Se passou um segundo e propriedade conta nao foi alterada ele roda a função fazerConta
+
 		}
 	}
 });
