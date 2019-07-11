@@ -55,10 +55,11 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		nome: 'Marcelo'
-	},
-	updated:function(){
-		alert(this.nome)
+		titulo: 'Marcelo',
+		subtiulo: 'Este é o <strong>subtiulo</strong> da pagina',
+		copyright: 'Todos os direitos reservados',
+		nome: 'Marcelo',
+		carregado: true
 	}
 });
 
@@ -69,4 +70,6 @@ let app = new Vue ({
 	mounted: depois de renderizar o elemento na tela
 	beforeUpdate: antes de o elemento for modificado
 	updated: depois do elemento ser modificado
+	boforeDestroy : antes do elemento ser destruido
+	destroyed: quando o elemento for destruido
 */
