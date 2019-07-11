@@ -55,11 +55,18 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		titulo: 'Marcelo',
-		subtiulo: 'Este é o <strong>subtiulo</strong> da pagina',
-		copyright: 'Todos os direitos reservados',
-		nome: 'Marcelo',
-		carregado: true
+		aviso:true,
+		divid: 'qualquer',
+		link: 'https://google.com.br',
+		n: 14
+	},
+	methods:{
+		clicou:()=>{
+			alert("clicou");
+		},
+		enviou:()=>{
+			alert("Enviou");
+		}
 	}
 });
 
