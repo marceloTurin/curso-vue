@@ -55,17 +55,11 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		aviso:true,
-		divid: 'qualquer',
-		link: 'https://google.com.br',
-		n: 14
+		url:'https://b7web.com.br'
 	},
 	methods:{
-		clicou:()=>{
-			alert("clicou");
-		},
-		enviou:()=>{
-			alert("Enviou");
+		fazAlgumaCoisa: ()=>{
+			alert("Fez");
 		}
 	}
 });

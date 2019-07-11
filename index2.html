@@ -17,18 +17,8 @@
 		<section class="container">
 			<section class="container__content">
 
-
-				<div v-if="aviso">Este é um aviso</div>
-				<div v-bind:id="divid">Esta é uma div qualquer</div>
-				<a v-bind:href="link">Acessar</a>
-				<div v-bind:id="'item-'+n">Div qualquer</div>
-				<button v-on:click="clicou">Clique</button>
-
-				<form v-on:submit.prevent="enviou">
-					<input type="text" name="">
-					<input type="submit" name="" value="Enviar">
-				</form>
-
+				<a :href="url">Clique aqui</a> <!-- : simula o v-bind -->
+				<button @click="fazAlgumaCoisa">Clique em mim</button> <!-- @ simula o simula o v-on -->
 			</section>
 			<aside class="container__sidebar">
 
