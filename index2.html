@@ -17,8 +17,9 @@
 		<section class="container">
 			<section class="container__content">
 
-				<a :href="url">Clique aqui</a> <!-- : simula o v-bind -->
-				<button @click="fazAlgumaCoisa">Clique em mim</button> <!-- @ simula o simula o v-on -->
+				{{nome}} <br>
+				{{nomeInvertido}}
+
 			</section>
 			<aside class="container__sidebar">
 
@@ -28,8 +29,6 @@
 		</section>
 		<footer class="footer">
 
-			<span v-text="copyright"></span>
-			
 
 		</footer>
 	</div>
