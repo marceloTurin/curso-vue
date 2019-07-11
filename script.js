@@ -17,7 +17,7 @@
 })*/
 
 
-bandeira = (pais)=>{
+/*bandeira = (pais)=>{
 	return `<img src="paises/${pais}.png" />`
 }
 
@@ -46,7 +46,27 @@ let app = new Vue({
 			];
 		}
 	}
-})
+})*/
 
 
 //app.pais = 'brazil';
+
+
+let app = new Vue ({
+	el: '#app',
+	data:{
+		nome: 'Marcelo'
+	},
+	updated:function(){
+		alert(this.nome)
+	}
+});
+
+/*
+	beforeCreate: antes do elemento ser criado
+	created: quando o elemento foi criado na memoria
+	beforeMount: antes de renderizar o elemento na tela
+	mounted: depois de renderizar o elemento na tela
+	beforeUpdate: antes de o elemento for modificado
+	updated: depois do elemento ser modificado
+*/
