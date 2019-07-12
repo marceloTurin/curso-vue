@@ -49,34 +49,32 @@ let app = new Vue({
 })*/
 
 
-//app.pais = 'brazil';
+
+
+//Comparação de Watcher vs Computado
 
 
 let app = new Vue ({
 	el: '#app',
 	data:{
-		conta : '',
-		aviso: '',
-		resultado: '',
-		timer:null
+		primeiroNome: '',
+		segundoNome: ''
+		//nomeCompleto: ''
 	},
-	methods:{
-		fazerConta:function (){
-			this.aviso = '';
-			this.resultado = eval(this.conta)
+	computed:{
+		nomeCompleto:function() {
+			return this.primeiroNome+' '+this.segundoNome;
 		}
-	},
-	watch:{ /// Quando a propriedade conta for alterada ele limpa o contador
-		conta:function(){
-			this.aviso = 'Digitando...';
-			if (this.timer != null) {
-				clearTimeout(this.timer);
-			}
-
-			this.timer = setTimeout(this.fazerConta,1000) //Se passou um segundo e propriedade conta nao foi alterada ele roda a função fazerConta
-
+	}/*
+	watch:{
+		primeiroNome:function(){
+			this.nomeCompleto = `${this.primeiroNome} ${this.segundoNome};`
+		},
+		segundoNome:function(){
+			this.nomeCompleto = `${this.primeiroNome} ${this.segundoNome};`	
 		}
-	}
+	}*/
+	
 });
 
 /*

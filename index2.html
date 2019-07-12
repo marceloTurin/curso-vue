@@ -17,14 +17,16 @@
 		<section class="container">
 			<section class="container__content">
 
-				<input v-model="conta"> <span>{{aviso}}</span>
+				Primeiro nome:
+				<input v-model="primeiroNome" /> <br>
+
+				Segundo nome:
+				<input v-model="segundoNome">
 
 			</section>
 			<aside class="container__sidebar">
 
-				{{resultado}}
-
-			
+				{{nomeCompleto}}
 
 			</aside>
 		</section>
