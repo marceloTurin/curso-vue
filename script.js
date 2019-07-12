@@ -62,18 +62,17 @@ let app = new Vue ({
 		//nomeCompleto: ''
 	},
 	computed:{
-		nomeCompleto:function() {
-			return this.primeiroNome+' '+this.segundoNome;
+		nomeCompleto:{
+			get:function(){
+				return `${this.primeiroNome} ${this.segundoNome}`
+			},
+			set: function(novoValor){
+				
+					let nomes = novoValor.split(' ');
+					this.primeiroNome = nomes[0]
+			}
 		}
-	}/*
-	watch:{
-		primeiroNome:function(){
-			this.nomeCompleto = `${this.primeiroNome} ${this.segundoNome};`
-		},
-		segundoNome:function(){
-			this.nomeCompleto = `${this.primeiroNome} ${this.segundoNome};`	
-		}
-	}*/
+	}
 	
 });
 
