@@ -17,18 +17,22 @@
 		<section class="container">
 			<section class="container__content">
 
-				<div>
-					Digite um nome: <input type="text" v-model="nome">
-					<button @click="adicionaNomes">Adicionar</button>
+				
+				Digite um nome: 
+				<input type="text" v-model="nomeInput"> <span>{{aviso}}</span>
+				<div v-if="nomePronto">
+					<button @click="adicionaNomes">Adicionar</button>	
 				</div>
+				
+				
 			</section>
 			<aside class="container__sidebar">
 
 				<ul>
-					<li v-for="nome in listaNomes">{{nome}}</li>
+					<li v-for="item in lista">{{item}}</li>
 				</ul>		
 				
-				<span> Total de nomes: {{listaNomes.length}}</span>
+				<span>{{totalTexto}} </span>
 
 			</aside>
 		</section>
