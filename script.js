@@ -57,21 +57,13 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		lista : [
-			{nome:'Marcelo',idade:21},
-			{nome:'Paulo',idade:30},
-			{nome:'Fulana',idade:20},
-			{nome:'Antonio',idade:40}
-		],
-		objeto:{
-			nome: 'Marcelo',
-			idade : '21',
-			pai: 'Fulano',
-			mae: 'Ciclana'
-		}
+		lista : ['Marcelo','Paulo','Ciclano']
 	}
 	
 });
+
+//Altera o elemento do array
+Vue.set(app.lista,1,'Marcelo da Silva') //Passando como parametro: a lista, o indice do elemento a ser alterado, e o valor a ser alterado
 
 /*
 	beforeCreate: antes do elemento ser criado
