@@ -57,22 +57,34 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		primeiroNome: '',
-		segundoNome: ''
-		//nomeCompleto: ''
+		errorMsg: '',
+		errorDivClass:{
+			ativo: false,
+			warning: false,
+			error: false
+		}
 	},
-	computed:{
-		nomeCompleto:{
-			get:function(){
-				return `${this.primeiroNome} ${this.segundoNome}`
-			},
-			set: function(novoValor){
-				
-					let nomes = novoValor.split(' ');
-					this.primeiroNome = nomes[0]
-			}
+	methods:{
+		showWarning:function(msg){
+			this.errorDivClass.ativo = true;
+			this.errorDivClass.warning = true;
+			this.errorDivClass.error = false;
+			this.errorDivClass.errorMsg = msg;
+		},
+		showError:function(msg){
+			this.errorDivClass.ativo = true;
+			this.errorDivClass.warning = false;
+			this.errorDivClass.error = true;
+			this.errorDivClass.errorMsg = msg;
+		},
+		hideError:function(){
+			this.errorDivClass.ativo = false;
+			this.errorDivClass.warning = false;
+			this.errorDivClass.error = false;
+			this.errorDivClass.errorMsg = '';
 		}
 	}
+	
 	
 });
 

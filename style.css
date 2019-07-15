@@ -31,3 +31,19 @@ body {
 	min-height:100px;
 	background-color:#EEE;
 }
+
+.oculto{
+	display: none;
+}
+
+.ativo{
+	display: block;
+}
+.warning {
+	background-color: #0000FF;
+	color: #FFF;
+}
+.error {
+	background-color: #FF0000;
+	color: #FFF;
+}
