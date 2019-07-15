@@ -58,30 +58,44 @@ let app = new Vue ({
 	el: '#app',
 	data:{
 		errorMsg: '',
-		errorDivClass:{
-			ativo: false,
-			warning: false,
-			error: false
+		errorType: ''
+	},
+	computed:{
+		errorDivClass:function(){
+			let r = {
+				ativo:false,
+				warning:false,
+				error: false
+			};
+
+			if (this.errorMsg != "") {
+				r.ativo = true;
+			}
+
+			switch(this.errorType){
+				case 'warning':
+					r.warning = true;
+					r.error = false;
+					break;
+				case 'error':
+					r.warning = false;
+					r.error = true;	
+					break;
+			}
+			return r;
 		}
 	},
 	methods:{
 		showWarning:function(msg){
-			this.errorDivClass.ativo = true;
-			this.errorDivClass.warning = true;
-			this.errorDivClass.error = false;
-			this.errorDivClass.errorMsg = msg;
+			this.errorMsg = msg;
+			this.errorType = 'warning';
 		},
 		showError:function(msg){
-			this.errorDivClass.ativo = true;
-			this.errorDivClass.warning = false;
-			this.errorDivClass.error = true;
-			this.errorDivClass.errorMsg = msg;
+			this.errorMsg = msg;
+			this.errorType = 'error';
 		},
 		hideError:function(){
-			this.errorDivClass.ativo = false;
-			this.errorDivClass.warning = false;
-			this.errorDivClass.error = false;
-			this.errorDivClass.errorMsg = '';
+			this.errorMsg = '';
 		}
 	}
 	
