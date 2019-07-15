@@ -57,48 +57,20 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		errorMsg: '',
-		errorType: ''
-	},
-	computed:{
-		errorDivClass:function(){
-			let r = {
-				ativo:false,
-				warning:false,
-				error: false
-			};
-
-			if (this.errorMsg != "") {
-				r.ativo = true;
+		aviso:'Alguma mensagem de aviso',
+		style:{
+			avisoBase:{
+				border:'1px solid #000',
+				fontSize: '20px',
+				padding: '10px'
+			},
+			avisoError:{
+				backgroundColor:'#FF0000',
+				color: '#FFF',
+				fontSize: '30px'
 			}
-
-			switch(this.errorType){
-				case 'warning':
-					r.warning = true;
-					r.error = false;
-					break;
-				case 'error':
-					r.warning = false;
-					r.error = true;	
-					break;
-			}
-			return r;
-		}
-	},
-	methods:{
-		showWarning:function(msg){
-			this.errorMsg = msg;
-			this.errorType = 'warning';
-		},
-		showError:function(msg){
-			this.errorMsg = msg;
-			this.errorType = 'error';
-		},
-		hideError:function(){
-			this.errorMsg = '';
 		}
 	}
-	
 	
 });
 

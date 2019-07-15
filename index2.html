@@ -17,8 +17,8 @@
 		<section class="container">
 			<section class="container__content">
 
-				<div class="oculto" v-bind:class="errorDivClass">
-					{{errorMsg}}
+				<div  v-bind:style="[style.avisoBase,style.avisoError]">
+					{{aviso}}
 				</div>
 
 			</section>
