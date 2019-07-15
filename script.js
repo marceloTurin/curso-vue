@@ -57,7 +57,18 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		ganhou:true
+		lista : [
+			{nome:'Marcelo',idade:21},
+			{nome:'Paulo',idade:30},
+			{nome:'Fulana',idade:20},
+			{nome:'Antonio',idade:40}
+		],
+		objeto:{
+			nome: 'Marcelo',
+			idade : '21',
+			pai: 'Fulano',
+			mae: 'Ciclana'
+		}
 	}
 	
 });
