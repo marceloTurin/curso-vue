@@ -17,6 +17,12 @@
 		<section class="container">
 			<section class="container__content">
 
+
+				<div class="area" v-on:click.self.once="algo">
+					<button>Clique em mim</button>
+				</div>
+
+
 				<form v-on:submit.prevent="algo">
 					<input type="text" name="">
 					<input type="submit" value="Clique para enviar">
@@ -41,3 +47,9 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+
+
+	<!--  O self o evento so funciona no proprio elemento e não nos filhos-- >
+	<!--  O once o evento so funciona uma unica vez -- >
+
