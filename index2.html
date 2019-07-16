@@ -18,7 +18,9 @@
 			<section class="container__content">
 
 
-				<input type="text" v-on:keyup.enter="teclou">
+				<input type="text" v-on:keyup.shift.67="teclou">
+
+				<button v-on:click.exact="teclou" v-on:click.shift="teclou2">Clique aqui</button> <!-- Metodo exact so executa a função quando for exatamente click + shift -->
 				
 				<p>A contagem é: {{contagem}}</p>
 

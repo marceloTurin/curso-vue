@@ -68,6 +68,9 @@ let app = new Vue ({
 			console.log(e.keyCode)
 			this.contagem ++;	
 			
+		},
+		teclou2:function(){
+			this.contagem += 10
 		}
 	}
 	
