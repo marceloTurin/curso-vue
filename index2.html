@@ -17,12 +17,14 @@
 		<section class="container">
 			<section class="container__content">
 
-				<input v-model="busca"/>
+				<form v-on:submit.prevent="algo">
+					<input type="text" name="">
+					<input type="submit" value="Clique para enviar">
+				</form>
 
-				<ul>
-					<li v-for="item in nomesFiltrados">{{item}}</li>
-				</ul>
-			
+				<button v-on:click="addContagem(3,$event)">Clique aqui</button>
+				
+				<p>A contagem é: {{contagem}}</p>
 
 			</section>
 			<aside class="container__sidebar">

@@ -57,29 +57,16 @@ let app = new Vue({
 let app = new Vue ({
 	el: '#app',
 	data:{
-		busca:'',
-		nomes:['Marcelo','Paulo','Antonio','Ciclano','Isa','Dani','Amanda']
+		contagem: 0
 	},
-	computed:{
-		nomesFiltrados:function(){
+	methods:{
+		addContagem:function(x,evento){
 
-			//Solução 1
-			return  this.busca != '' ? this.nomes.filter(nome => nome.toLowerCase().search(this.busca.toLowerCase())) : this.nomes
-
-			//Solução 2
-			/*return this.nomes.filter(function(nome){
-				if (this.busca != '') {
-					
-					if (nome.toLowerCase().indexOf(this.busca.toLowerCase()) > -1) {
-						return true;
-					} else{
-						return false;
-					}		
-
-				} else{
-					return true;
-				}	
-			},this);*/
+			evento.preventDefault();
+			this.contagem += x;
+		},
+		algo:function(){
+			this.contagem ++;
 		}
 	}
 	
