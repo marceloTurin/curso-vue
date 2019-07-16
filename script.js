@@ -51,8 +51,7 @@ let app = new Vue({
 
 
 
-//Comparação de Watcher vs Computado
-
+Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
 
 let app = new Vue ({
 	el: '#app',
@@ -65,8 +64,10 @@ let app = new Vue ({
 			evento.preventDefault();
 			this.contagem += x;
 		},
-		algo:function(){
-			this.contagem ++;
+		teclou:function(e){
+			console.log(e.keyCode)
+			this.contagem ++;	
+			
 		}
 	}
 	

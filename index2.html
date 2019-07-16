@@ -18,17 +18,7 @@
 			<section class="container__content">
 
 
-				<div class="area" v-on:click.self.once="algo">
-					<button>Clique em mim</button>
-				</div>
-
-
-				<form v-on:submit.prevent="algo">
-					<input type="text" name="">
-					<input type="submit" value="Clique para enviar">
-				</form>
-
-				<button v-on:click="addContagem(3,$event)">Clique aqui</button>
+				<input type="text" v-on:keyup.enter="teclou">
 				
 				<p>A contagem é: {{contagem}}</p>
 
