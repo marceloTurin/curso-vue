@@ -56,15 +56,8 @@ Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
 let app = new Vue ({
 	el: '#app',
 	data:{
-		mensagem: '',
-		selecionado: false,
-		nomes: [],
-		opcao: '',
-		opcoes: [
-			{nome: 'Marcelo',letra:'M'},
-			{nome: 'Pedro',letra:'P'},
-			{nome: 'Anderson',letra:'A'}
-		]
+		marcado: 'nao',
+		selecionado: ''
 	}
 	
 });
