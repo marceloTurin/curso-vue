@@ -56,22 +56,15 @@ Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
 let app = new Vue ({
 	el: '#app',
 	data:{
-		contagem: 0
-	},
-	methods:{
-		addContagem:function(x,evento){
-
-			evento.preventDefault();
-			this.contagem += x;
-		},
-		teclou:function(e){
-			console.log(e.keyCode)
-			this.contagem ++;	
-			
-		},
-		teclou2:function(){
-			this.contagem += 10
-		}
+		mensagem: '',
+		selecionado: false,
+		nomes: [],
+		opcao: '',
+		opcoes: [
+			{nome: 'Marcelo',letra:'M'},
+			{nome: 'Pedro',letra:'P'},
+			{nome: 'Anderson',letra:'A'}
+		]
 	}
 	
 });
