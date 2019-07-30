@@ -87,7 +87,18 @@ let menuSuperior = {
 	template: '<span>Menu</span>'
 }
 
+let postagem = {
+	props: ['titulo','corpo'],
+	data:function(){
+		return {
+			exemplo:'algum'
+		}
+	},
+	template: '<div> <h2>{{titulo}}</h2> <p> {{corpo}} </p> <span> {{exemplo}} </span>  </div>'
+}
 
+
+/*---------------------------*/
 
 let header = new Vue ({
 	el: '#header',
@@ -105,6 +116,18 @@ let sidebar = new Vue({
 	data:{
 		item:'Alguma coisa'
 	}
+})
+
+
+let conteudo = new Vue({
+	el:'#conteudo',
+	data:{
+
+	},
+	components:{
+		postagem
+	}
+
 })
 
 //Altera o elemento do array
