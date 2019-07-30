@@ -51,7 +51,17 @@ let app = new Vue({
 
 
 
-Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
+//Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
+
+Vue.component('menu-superior',{
+	data:function(){
+		return {
+			texto:'Texto Qualquer'
+		}
+	},
+	template:'<button>{{texto}}</button>'
+})
+
 
 let app = new Vue ({
 	el: '#app',
