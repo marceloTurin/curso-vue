@@ -53,6 +53,9 @@ let app = new Vue({
 
 //Vue.config.keyCodes.f2 = 113; // Criando o atalho do F2 na função keyup
 
+
+
+//Componentes Globais
 Vue.component('menu-superior',{
 	data:function(){
 		return {
@@ -77,14 +80,32 @@ Vue.component('contador',{
 	template: '<div><span>{{c}}x</span> <button v-on:click="aumentar">Aumentar </button> </div>'
 })
 
-let app = new Vue ({
-	el: '#app',
+//Componente Locais
+
+
+let menuSuperior = {
+	template: '<span>Menu</span>'
+}
+
+
+
+let header = new Vue ({
+	el: '#header',
 	data:{
-		nome:'',
-		idade:''
+		title:'Titulo do Site'
+	},
+	components:{
+		'menu-superior': menuSuperior
 	}
 	
 });
+
+let sidebar = new Vue({
+	el:'#sidebar',
+	data:{
+		item:'Alguma coisa'
+	}
+})
 
 //Altera o elemento do array
 //Vue.set(this.lista,1,'Marcelo da Silva') //Passando como parametro: a lista, o indice do elemento a ser alterado, e o valor a ser alterado

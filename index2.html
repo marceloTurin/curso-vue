@@ -9,8 +9,10 @@
 </head>
 <body>
 	<div id="app">
-		<header class="header">
+		<header class="header" id="header">
 
+			<h1>{{title}}</h1>
+			<contador></contador>
 			<menu-superior></menu-superior>
 
 		</header>
@@ -20,11 +22,12 @@
 				<contador></contador>
 				<contador></contador>
 				<contador></contador>
-								
+
 
 			</section>
-			<aside class="container__sidebar">
+			<aside class="container__sidebar" id="sidebar">
 
+				<span>{{item}}</span>
 				
 			</aside>
 		</section>
