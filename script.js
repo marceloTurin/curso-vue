@@ -94,19 +94,6 @@ let menuSuperior = {
 	template: '<span>Menu</span>'
 }
 
-let postagem = {
-	props: ['titulo','corpo'],
-	data:function(){
-		return {
-			exemplo:'algum'
-		}
-	},
-	template: `
-		<div> 
-			<h2> <slot name="titulo"></slot> </h2>
-			<p><slot name="corpo"></slot></p>
-		</div>`
-}
 
 
 /*---------------------------*/
@@ -130,10 +117,33 @@ let sidebar = new Vue({
 })
 
 
+
+let postagem = {
+	props: ['titulo'],
+	methods:{
+		responder:function(){
+			this.$emit('responder',this.titulo)
+		}
+	},
+	template: `
+		<div> 
+			<h2> {{titulo}} </h2>
+			<p><slot></slot></p>
+			<button v-on:click="responder">Responder</button>
+		</div>`
+}
+
 let conteudo = new Vue({
 	el:'#conteudo',
 	data:{
-
+		responderAberto: false,
+		respostaTitulo: ''
+	},
+	methods:{
+		abrirResposta: function(titulo){
+			this.responderAberto = true;
+			this.respostaTitulo = titulo;
+		}
 	},
 	components:{
 		postagem
