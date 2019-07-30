@@ -17,11 +17,19 @@
 		<section class="container">
 			<section class="container__content" id="conteudo">
 
-				<postagem titulo="Titulo 1" corpo="Texto do item 1"></postagem>
-				<postagem titulo="Titulo 2" corpo="Texto do item 2"></postagem>
-				<postagem titulo="Titulo 3" corpo="Texto do item 3"></postagem>
-				<postagem titulo="Titulo 4" corpo="Texto do item 4"></postagem>
+				<aviso>Mensagem de aviso</aviso>
 
+				<postagem titulo="Titulo 1" corpo="Texto do item 1">
+					<template slot="titulo">
+						Titulo da postagem
+					</template>
+					<template slot="corpo">
+						Corpo da postagem <br/>
+						<button>Botão na postagem</button> <br>
+						<img src="http://www.google.com.br/google.jpg">	
+					</template>
+					
+				</postagem>
 
 			</section>
 			<aside class="container__sidebar" id="sidebar">

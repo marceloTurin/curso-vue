@@ -80,6 +80,13 @@ Vue.component('contador',{
 	template: '<div><span>{{c}}x</span> <button v-on:click="aumentar">Aumentar </button> </div>'
 })
 
+
+Vue.component('aviso',{
+	template: `
+		<div class='aviso'> <slot></slot> </div>
+	`
+})
+
 //Componente Locais
 
 
@@ -94,7 +101,11 @@ let postagem = {
 			exemplo:'algum'
 		}
 	},
-	template: '<div> <h2>{{titulo}}</h2> <p> {{corpo}} </p> <span> {{exemplo}} </span>  </div>'
+	template: `
+		<div> 
+			<h2> <slot name="titulo"></slot> </h2>
+			<p><slot name="corpo"></slot></p>
+		</div>`
 }
 
 
